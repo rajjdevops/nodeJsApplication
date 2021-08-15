@@ -1,0 +1,8 @@
+- hosts: windows
+  remote_user: root
+  become: yes
+  tasks:
+  - name: Copy a single file
+    ansible.windows.win_copy:
+      src: C:\jenkins\workspace\project win
+      dest: C:\jenkins\
