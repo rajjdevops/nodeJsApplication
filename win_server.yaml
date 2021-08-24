@@ -3,7 +3,7 @@ all:
     windows:
       ansible_host: ec2-18-207-112-5.compute-1.amazonaws.com
       ansible_user: administrator
-      ansible_password: '{{ lookup("env", "ANSIBLE_PASSWORD") }}'
+      ansible_password: "{{ ANSIBLE_PASSWORD }}"
       ansible_port: 5986
       ansible_connection: winrm
       ansible_winrm_scheme: https
