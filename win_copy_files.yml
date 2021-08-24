@@ -1,1 +1,25 @@
 
+- name: Copy files in windows systems
+  hosts: windows
+  gather_facts: false
+  tasks:
+    - name: copying existing files to temp
+      win_copy:
+       src: C:\jenkins\workspace\project win
+       dest: C:\Users\Administrator
+       remote_src: yes
+       register: C
+
+    - name: copying current file to sql server
+      win_copy:
+       src: /var/lib/jenkins/workspace/mano/
+       dest:  C:\jenkins\workspace\
+       remote_dest: True
+       when: C.win_copy.exists == True
+       register: S
+
+    - name: Remove directory structure
+      ansible.windows.win_file:
+       path: C:\Users\Administrator\project win
+       state: absent
+       when: S.win_copy.exists == True
