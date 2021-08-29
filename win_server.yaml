@@ -1,9 +1,9 @@
 all:
   hosts:
     windows:
-      ansible_host: ec2-3-88-158-22.compute-1.amazonaws.com
+      ansible_host: ec2-54-163-202-107.compute-1.amazonaws.com
       ansible_user: administrator
-      ansible_password: 
+      ansible_password: f9CBDc2*B2w2BqjhxeDByN6o$oilepA&
       ansible_port: 5986
       ansible_connection: winrm
       ansible_winrm_scheme: https
